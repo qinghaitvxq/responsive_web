@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width:100%;
+            display:flex;
+            flex-wrap:wrap;
+        }
+
+        .box{
+            width:100%;
+            height:100px;
+        }
+        .dark_blue{
+            background-color: #15217a;
+        }
+        .light_blue{
+            background-color: #5294dc;
+        }
+        .green{
+            background-color: #006000;
+        }
+        .red{
+            background-color: #c5412b;
+        }
+        @media screen and (min-width:500px){
+            .dark_blue{
+                width:50%;
+                height:200px;
+            }
+            #container2{
+                width:50%;
+            }
+        }
+        @media screen and (min-width:600px){
+            .dark_blue{
+                width:25%;
+                order:1;
+            }
+            #container2{
+                width:50%;
+            }
+            .red{
+                width:25%;
+                order:-1;
+                height:200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box dark_blue">
+
+    </div>
+    <div class="container" id="container2">
+        <div class="box light_blue"></div>
+        <div class="box green"></div>
+    </div>
+    <div class="box red"></div>
+</div>
+</body>
+</html>
