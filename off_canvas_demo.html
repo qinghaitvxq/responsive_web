@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>off_canvas_demo</title>
     <link rel="stylesheet" type="text/css" href="https://udacity.github.io/RWDF-samples/default-styles.css">
 </head>
 <style type="text/css">
@@ -11,10 +11,6 @@
     html, body {
         height: 100%;
         width: 100%;
-    }
-    a#menu svg {
-        width: 40px;
-        fill: #000;
     }
     nav, main {
         padding: 1em;
@@ -52,7 +48,16 @@
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }
-
+    .menu{
+        margin-bottom: 20px;
+    }
+    .menu>div{
+        width:35px;
+        height:3px;
+        background-color:white;
+        border-radius:3px;
+        margin-top: 5px;
+    }
     /* If there is enough space (> 600px), we keep the drawer open all the time. */
     @media (min-width: 600px) {
 
@@ -81,10 +86,7 @@
     /* If there is space (> 800px), we keep the drawer open by default. */
     @media (min-width: 600px) {
         main > #menu:after {
-            content: 'The drawer stays open if width > 600px';
-        }
-        main p, nav p {
-            text-decoration: line-through;
+            content: '页面宽度大于600px导航会永远留在页面上';
         }
     }
 
@@ -92,17 +94,21 @@
 </head>
 <body>
 <nav id="drawer" class="dark_blue">
-    <h2>Off Canvas</h2>
-    <p>Click outside the drawer to close</p>
+    <h2>画布外的导航</h2>
+    <p>页面宽度小于600px时，点击本画布之外的区域可以关闭导航</p>
 </nav>
 
 <main class="light_blue">
     <a id="menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
-        </svg>
+        <div class="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
     </a>
-    <p>Click on the menu icon to open the drawer</p>
+    <p>点击左上方导航图标可以打开菜单</p>
 </main>
 
 <script>
